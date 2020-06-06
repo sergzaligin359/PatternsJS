@@ -1,3 +1,4 @@
+// Суть паттерна в создании класса
 function Server(name, ip) {
 	this.name = name;
 	this.ip = ip;
