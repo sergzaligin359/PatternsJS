@@ -1,17 +1,19 @@
-class Database {
-	constructor(data){
-		if(Database.exist) return Database.instance;
-		Database.instance = this;
-		Database.exist = true;
-		this.data = data;
-	}
-	getData(){
-		return this.data;
-	}
+class Db {
+    
+
+    constructor(){
+        if(Db.ex) {
+            console.error('Exemp exists', Db.ex);
+        }else{
+            Db.ex = this;
+        }
+    }
+
+    connection(n){
+        console.log('Db connection success...' + n);
+    }
 }
 
-const mysql = new Database('mySql');
-const mongodb = new Database('mySql');
-
-console.log('MySql', mysql.getData());
-console.log('mongodb', mongodb.getData());
+const db = new Db;
+const db2 = new Db;
+db.connection(1);

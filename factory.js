@@ -1,4 +1,3 @@
-// Суть паттерна обьединить в один класс создание однотипных инстансов
 class SimpleMembership {
 	constructor(name) {
 		this.name = name;
@@ -21,17 +20,19 @@ class PremiumMembership {
 };
 
 class MemberFactory {
-	static list = {
+    static list = {
 		simple: SimpleMembership,
 		standart: StandartMembership,
 		premium: PremiumMembership
-	};
-
-	create(name, type='simple'){
-		const Membership = MemberFactory.list[type] || MemberFactory.list['simple'];
-		return new Membership(name);
 	}
-};
-const factory = new MemberFactory;
-const membership = factory.create('VIP', 'premium');
-console.log('Instance', membership instanceof Object, membership);
+
+	create(){
+		
+	}
+}
+
+const fac = new MemberFactory;
+
+const dd = fac.create('Myyy', 'standart');
+
+console.log('Factory', dd);
